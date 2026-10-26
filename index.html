@@ -45,6 +45,37 @@
     .reveal.visible{opacity:1;transform:translateY(0)}.tag{display:inline-flex;padding:8px 11px;border:1px solid #d4d9d1;border-radius:2px;font-size:.72rem;color:#4d625d}
     .mobile-menu{display:none}.mobile-menu.open{display:flex}
     a:focus-visible,button:focus-visible{outline:3px solid #b8765d;outline-offset:4px}
+
+    /* Additional responsive refinements */
+    html, body { width: 100%; max-width: 100%; overflow-x: clip; }
+    img, svg { max-width: 100%; }
+    section, main, header, footer { min-width: 0; }
+    p, h1, h2, h3, a, span { overflow-wrap: anywhere; }
+    .hero-art { width: 100%; }
+    @media (max-width: 1023px) {
+      .desktop-nav { gap: 1rem; }
+      .desktop-nav .nav-link { font-size: .72rem; }
+      .hero-art { min-height: 390px; }
+    }
+    @media (max-width: 767px) {
+      html { scroll-padding-top: 76px; }
+      .hero-art { min-height: clamp(280px, 88vw, 410px); }
+      h1 { font-size: clamp(3rem, 14vw, 4.5rem) !important; }
+      section { scroll-margin-top: 76px; }
+      .mobile-menu { padding-bottom: 1.25rem; }
+      .mobile-menu a { display: block; padding: .3rem 0; min-height: 32px; }
+      .outline-btn, .solid-btn { min-height: 44px; }
+      .timeline-item { padding-left: 21px; padding-bottom: 28px; }
+      .tag { padding: 7px 9px; }
+    }
+    @media (max-width: 420px) {
+      .hero-art { min-height: 275px; }
+      .eyebrow { font-size: .61rem; letter-spacing: .14em; }
+      .hero-art .art-label { font-size: .55rem; letter-spacing: .12em; }
+      .hero-art > div:last-child { max-width: 70%; font-size: 8px; }
+      .solid-btn, .outline-btn { font-size: .72rem; padding: 12px 11px; }
+    }
+
     @media(max-width:767px){.hero-art{min-height:340px}.desktop-nav{display:none}.outline-btn,.solid-btn{padding:13px 14px}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
     @media print{header,footer,.solid-btn,.outline-btn,#printButton{display:none!important}body{background:white;color:#111}.reveal{opacity:1!important;transform:none!important}section{break-inside:avoid}.hero-art{min-height:250px}}
