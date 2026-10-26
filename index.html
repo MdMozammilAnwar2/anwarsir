@@ -77,6 +77,103 @@
     }
 
     @media(max-width:767px){.hero-art{min-height:340px}.desktop-nav{display:none}.outline-btn,.solid-btn{padding:13px 14px}}
+
+    /* App-like mobile experience: compact header, clean drawer, no squeezed desktop nav */
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: flex; }
+    @media (max-width: 767px) {
+      .desktop-nav { display: none !important; }
+      header nav { min-height: 68px; padding-top: 12px !important; padding-bottom: 12px !important; }
+      header nav > a { min-width: 0; flex: 1; gap: 10px; }
+      header nav > a > span:last-child { min-width: 0; }
+      header nav > a > span:last-child > span:first-child {
+        font-size: 13px;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow-wrap: normal;
+      }
+      header nav > a > span:last-child > span:last-child {
+        font-size: 8px;
+        line-height: 1.35;
+        letter-spacing: .12em;
+        max-width: 190px;
+      }
+      #menuButton {
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+        margin-left: 12px;
+        border-radius: 8px;
+        background: rgba(255,255,255,.45);
+      }
+      .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 60;
+        padding: 12px 20px 20px !important;
+        gap: 0 !important;
+        background: #F5F2EB;
+        border-bottom: 1px solid #DCDDD5;
+        box-shadow: 0 18px 28px rgba(32,59,67,.10);
+      }
+      .mobile-menu.open { display: flex; }
+      .mobile-menu a {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 48px !important;
+        padding: 12px 2px !important;
+        border-bottom: 1px solid #DCDDD5;
+        font-size: 14px;
+        overflow-wrap: normal;
+      }
+      .mobile-menu a:last-child { border-bottom: 0; color: #203B43; }
+      #home {
+        display: flex !important;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 28px !important;
+        padding: 36px 20px 42px !important;
+      }
+      #home > div:first-child { width: 100%; }
+      #home .eyebrow { margin-bottom: 18px !important; font-size: 10px; letter-spacing: .15em; line-height: 1.6; }
+      #home h1 {
+        max-width: 100%;
+        font-size: clamp(3.15rem, 13.5vw, 4.7rem) !important;
+        line-height: .98 !important;
+        letter-spacing: -.045em !important;
+        overflow-wrap: normal;
+      }
+      #home p:not(.eyebrow) { font-size: 16px !important; line-height: 1.75 !important; }
+      #home .mt-8 { margin-top: 24px !important; }
+      #home .mt-12 { margin-top: 28px !important; }
+      #home .hero-art {
+        width: 100%;
+        min-height: 300px !important;
+        max-height: 420px;
+        border-radius: 4px;
+      }
+      #home .hero-art .art-label { font-size: 9px; letter-spacing: .12em; }
+      section:not(#home) { padding-left: 20px !important; padding-right: 20px !important; }
+      section h2 { overflow-wrap: normal; }
+      .skill-card, article { min-width: 0; }
+      .timeline-item { padding-left: 20px; }
+      .solid-btn, .outline-btn { min-height: 46px; padding: 12px 14px; font-size: 12px; }
+      footer > div { align-items: flex-start; }
+    }
+    @media (max-width: 390px) {
+      header nav { padding-left: 15px !important; padding-right: 15px !important; }
+      header nav > a > span:last-child > span:first-child { font-size: 12px; }
+      header nav > a > span:last-child > span:last-child { max-width: 165px; font-size: 7px; }
+      #home { padding-left: 17px !important; padding-right: 17px !important; }
+      #home h1 { font-size: clamp(2.9rem, 13.8vw, 3.6rem) !important; }
+      #home .hero-art { min-height: 270px !important; }
+      #home .flex.flex-wrap.gap-3 { gap: 8px !important; }
+    }
+
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
     @media print{header,footer,.solid-btn,.outline-btn,#printButton{display:none!important}body{background:white;color:#111}.reveal{opacity:1!important;transform:none!important}section{break-inside:avoid}.hero-art{min-height:250px}}
   </style>
